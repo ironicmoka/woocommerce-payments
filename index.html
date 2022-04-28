@@ -1,0 +1,418 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>WooCommerce Payments REST API Documentation - WP REST API v3</title>
+
+    <link rel="icon" href="images/favicon-32x32-41be71e3.png" sizes="32x32" />
+    <link rel="icon" href="images/favicon-192x192-04eabf77.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="images/favicon-180x180-64352330.png" />
+    <meta name="msapplication-TileImage" content="images/favicon-270x270-4766b719.png" />
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nn {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nl {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ni {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .bp {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vg {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vi {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .w {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-28b06640.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-f609a46b.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-e0c1f518.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="#" class="logo">
+        <img src="images/logo-b9d35ada.png" alt="" />
+      </a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+        </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#order" class="toc-h1 toc-link" data-title="Order">Order</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-terminal-intent" class="toc-h2 toc-link" data-title="Create a terminal intent">Create a terminal intent</a>
+                  </li>
+                  <li>
+                    <a href="#capture-a-terminal-payment" class="toc-h2 toc-link" data-title="Capture a terminal payment">Capture a terminal payment</a>
+                  </li>
+                  <li>
+                    <a href="#create-customer" class="toc-h2 toc-link" data-title="Create customer">Create customer</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/">WooCommerce REST API Docs</a></li>
+            <li><a href="https://github.com/Automattic/woocommerce-payments">WooCommerce Payments</a></li>
+            <li><a href="https://github.com/tripit/slate">Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>WooCommerce Payments REST APIs build upon the WooCommerce REST interface which itself extends the WordPress REST APIs. Consuming, testing and debugging WCPay APIs is exactly the same as Woo APIs.</p>
+
+<p>For requirements, request/response format, and other details refer to the <a href="https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction">WooCommerce REST API docs</a>.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>WooCommerce includes two ways to authenticate with the WP REST API. It is also possible to authenticate using any <a href="http://v3.wp-api.org/guide/authentication/">WP REST API authentication</a> plugin or method.</p>
+
+<p>Refer to the <a href="http://woocommerce.github.io/woocommerce-rest-api-docs/#authentication">WooCommerce REST API docs</a> for more options and possibilities.</p>
+
+<hr>
+
+<p>Pre-generated keys can be used to authenticate use of the REST API endpoints. New keys can be generated either through the WordPress admin interface or they can be auto-generated through an endpoint.</p>
+
+<p>To create or manage keys for a specific WordPress user, go to WooCommerce &gt; Settings &gt; Advanced &gt; REST API.</p>
+
+<p><em>Note: Keys/Apps was found at WooCommerce &gt; Settings &gt; API &gt; Key/Apps prior to WooCommerce 3.4.</em></p>
+
+<p><img src="images/woocommerce-api-keys-settings-02dfb1f9.png" alt="WooCommerce REST API keys settings" /></p>
+
+<p>Click the &quot;Add Key&quot; button. In the next screen, add a description and select the WordPress user you would like to generate the key for. Use of the REST API with the generated keys will conform to that user&#39;s WordPress roles and capabilities.</p>
+
+<p>Choose the level of access for this REST API key, which can be <em>Read</em> access, <em>Write</em> access or <em>Read/Write</em> access. Then click the &quot;Generate API Key&quot; button and WooCommerce will generate REST API keys for the selected user.</p>
+
+<p><img src="images/woocommerce-creating-api-keys-0f78883a.png" alt="Creating a new REST API key" /></p>
+
+<p>Now that keys have been generated, you should see two new keys, a QRCode, and a Revoke API Key button. These two keys are your Consumer Key and Consumer Secret.</p>
+
+<p><img src="images/woocommerce-api-key-generated-9004dc03.png" alt="Generated REST API key" /></p>
+
+<p>If the WordPress user associated with an API key is deleted, the API key will cease to function. API keys are not transferred to other users.</p>
+<h1 id='order'>Order</h1>
+<p>The order API allows you to perform operations such as capture a terminal payment, create an intent, create a customer, etc. for a particular order.</p>
+<h2 id='create-a-terminal-intent'>Create a terminal intent</h2>
+<p><em>@since v3.5.0</em></p>
+
+<p>Create a new in-person payment intent for the given order ID without confirming it.</p>
+<h3 id='error-codes'>Error codes</h3>
+<ul>
+<li>  <code>wcpay_missing_order</code> - Order not found</li>
+<li>  <code>wcpay_server_error</code> - Unexpected server error</li>
+<li>  <code>wcpay_intent_creation_error</code> - Unknown error</li>
+</ul>
+<h3 id='http-request'>HTTP request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">POST</i>
+        <h6>/wp-json/wc/v3/payments/orders/&lt;order_id&gt;/create_terminal_intent</h6>
+    </div>
+</div>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/wp-json/wc/v3/payments/orders/42/create_terminal_intent <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret
+</code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pi_ZZZZZZZZZZZZZZZZAAAAAAAA"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wcpay_intent_creation_error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intent creation failed with the following message: &lt;reason&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='capture-a-terminal-payment'>Capture a terminal payment</h2>
+<p><em>@since v2.4.0</em></p>
+
+<p>Given an intent ID and an order ID, add the intent ID to the order and capture it.</p>
+<h3 id='post-params'>POST params</h3>
+<ul>
+<li>  payment_intent_id: string</li>
+</ul>
+<h3 id='error-codes-2'>Error codes</h3>
+<ul>
+<li>  <code>wcpay_missing_order</code> - Order not found</li>
+<li>  <code>wcpay_refunded_order_uncapturable</code> - Payment cannot be captured for partially or fully refunded orders</li>
+<li>  <code>wcpay_payment_uncapturable</code> - The payment cannot be captured if intent status is not one of &#39;processing&#39;, &#39;requires_capture&#39;, or &#39;succeeded&#39;</li>
+<li>  <code>wcpay_capture_error</code> - Unknown error</li>
+</ul>
+<h3 id='http-request-2'>HTTP request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">POST</i>
+        <h6>/wp-json/wc/v3/payments/orders/&lt;order_id&gt;/capture_terminal_payment</h6>
+    </div>
+</div>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/wp-json/wc/v3/payments/orders/42/capture_terminal_payment <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+    "payment_intent_id": "pi_ZZZZZZZZZZZZZZZZAAAAAAAA"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"succeeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pi_ZZZZZZZZZZZZZZZZAAAAAAAA"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wcpay_server_error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unexpected server error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='create-customer'>Create customer</h2>
+<p><em>@since v2.8.0</em></p>
+
+<p>Returns customer id from order. Create or update customer if needed.</p>
+<h3 id='error-codes-3'>Error codes</h3>
+<ul>
+<li>  <code>wcpay_missing_order</code> - Order not found</li>
+<li>  <code>wcpay_invalid_order_status</code> - Invalid order status</li>
+<li>  <code>wcpay_server_error</code> - Unexpected server error</li>
+</ul>
+<h3 id='http-request-3'>HTTP request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">POST</i>
+        <h6>/wp-json/wc/v3/payments/orders/&lt;order_id&gt;/create_customer</h6>
+    </div>
+</div>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/wp-json/wc/v3/payments/orders/42/create_customer <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret
+</code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"i_am_awesome"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wcpay_server_error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unexpected server error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+          </div>
+      </div>
+	</div>
+
+
+  </body>
+</html>
